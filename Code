@@ -1,0 +1,17 @@
+def kadane(a):
+    local_max=0
+    global_max=0
+    s=0
+    for i in range(len(a)):
+        global_max=global_max+a[i]
+        if global_max<0:
+            global_max=0
+            s=i+1
+        elif(local_max<global_max):
+            local_max=global_max
+            start=s
+            end=i
+    print(start)
+    print(end)
+    print(local_max)
+kadane([-2, 3, 4, -1, -2, 1, 5, -3])
